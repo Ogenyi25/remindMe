@@ -15,26 +15,48 @@ class App extends Component {
         this.props.addReminder(this.state.text);
     }
 
+    renderReminders() {
+        const { reminders } = this.props;
+        return (
+            <ul className="list-group col-sm-4">
+                {
+                    reminders.map(reminder => {
+                        return (
+                            <li key={reminder.id} className="list-group-item">
+                                <div>{reminder.text}</div>
+
+                            </li>
+                        )
+                    })
+                }
+
+            </ul>
+        )
+    }
+
 
     render() {
-        console.log('this.props', this.props);
         return (
             <div className="App">
                 <div className="title">
                     REMIND ME
                 </div>
-                <div className="form-inline">
+                <div className="form-inline reminder-form">
                     <div className="form-group">
                         <input type="text" className="form-control"
-                        placeholder="I have to ..."
-                        onChange={event => this.setState({text: event.target.value})}
+                            placeholder="I have to ..."
+                            onChange={event => this.setState({ text: event.target.value })}
                         />
                     </div>
-                    <button className="btn btn-success"
-                    onClick={() => this.addReminder()}
+                    <button
+                        type="button"
+                        className="btn btn-success"
+                        onClick={() => this.addReminder()}
                     >
-                    Add Reminder</button>
+                        Add Reminder
+                    </button>
                 </div>
+                {this.renderReminders() }
             </div>
         )
     }
