@@ -1,17 +1,38 @@
+body {
+    background: linear-gradient(to bottom left, #33ccff 0%, #ff99cc 100%)
+}
 .App {
     padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #ffff;
+    min-height: 600px;
+    width: 650px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 1px rgba(26, 25, 25, 0.5);
+  }
+  .btn-success {
+      margin-left: 50px;
   }
   
   .title {
     text-align: center;
     font-size: 26px;
   }
-
-  input {
-      margin: 5px;
+  .form-control {
+    background-color: rgb(119, 117, 117);
+    border: 0;
+    width: 200px;
+    height: 50px;
+    padding: 15px 20px 10px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+  }
+  .form-control::placeholder {
+    color: rgba(255 255 255 0.5);
   }
 
   .reminder-form {
@@ -19,6 +40,7 @@
   }
   .list-item {
       display: inline-block;
+      margin-bottom: 10px;
   }
   .delete-button {
       float: right;
